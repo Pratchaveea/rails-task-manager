@@ -1,0 +1,7 @@
+<div class="mx-4 mt-4" >
+  <h1>Tasks</h1>
+  <%@tasks.each do |task| %>
+    <p><%= link_to task.title, task_path(task)%> - <%= link_to 'delete', task_path(task.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{task.title}?"} %></p>
+  <% end %>
+  <%= link_to 'Create new task', new_task_path, class: 'btn btn-success'%>
+</div>
